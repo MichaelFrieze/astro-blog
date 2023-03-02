@@ -1,3 +1,10 @@
+# Deployments
+
+- [Vercel SSG](https://astro-blog-michaelfrieze.vercel.app/)
+- [Vercel SSR](https://astro-blog-ssr-michaelfrieze.vercel.app/)
+- [Netlify SSG](https://astro-blog-michaelfrieze.netlify.app/)
+- [Fly.io SSR](https://astro-blog-michaelfrieze.fly.dev/)
+
 # Astro Starter Kit: Minimal
 
 ```
