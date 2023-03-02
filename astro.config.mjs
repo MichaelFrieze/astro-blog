@@ -7,12 +7,14 @@ import image from '@astrojs/image';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
+import vercel from "@astrojs/vercel/serverless";
+
+// https://astro.build/config
 export default defineConfig({
   site: 'https://astro-blog-michaelfrieze.netlify.app',
-  integrations: [
-    image({
-      serviceEntryPoint: '@astrojs/image/sharp',
-    }),
-    sitemap(),
-  ],
+  integrations: [image({
+    serviceEntryPoint: '@astrojs/image/sharp'
+  }), sitemap()],
+  output: "server",
+  adapter: vercel()
 });
