@@ -1,28 +1,30 @@
 ---
+export const prerender = true;
+
 // component imports
-import MainLayout from "../../layouts/MainLayout.astro";
-import PostCard from "../../components/PostCard.astro";
+import MainLayout from '../../layouts/MainLayout.astro';
+import PostCard from '../../components/PostCard.astro';
 
 // utils
-import { slugify, formatBlogPosts } from "../../js/utils";
+import { slugify, formatBlogPosts } from '../../js/utils';
 
 export async function getStaticPaths() {
   return [
     {
-      params: { category: slugify("Reference Docs") },
-      props: { name: "Reference Docs" },
+      params: { category: slugify('Reference Docs') },
+      props: { name: 'Reference Docs' },
     },
     {
-      params: { category: slugify("General") },
-      props: { name: "General" },
+      params: { category: slugify('General') },
+      props: { name: 'General' },
     },
     {
-      params: { category: slugify("CSS") },
-      props: { name: "CSS" },
+      params: { category: slugify('CSS') },
+      props: { name: 'CSS' },
     },
     {
-      params: { category: slugify("Astro") },
-      props: { name: "Astro" },
+      params: { category: slugify('Astro') },
+      props: { name: 'Astro' },
     },
   ];
 }
@@ -30,7 +32,7 @@ export async function getStaticPaths() {
 const { category } = Astro.params;
 const { name } = Astro.props;
 
-const allPosts = await Astro.glob("../blog/*.md");
+const allPosts = await Astro.glob('../blog/*.md');
 const formattedPosts = formatBlogPosts(allPosts);
 const catPosts = formattedPosts.filter(
   (post) => slugify(post.frontmatter.category) === category
