@@ -8,7 +8,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://astro-blog-michaelfrieze.netlify.app',
+  site: 'https://astro-blog-michaelfrieze.vercel.app',
   integrations: [
     image({
       serviceEntryPoint: '@astrojs/image/sharp',
